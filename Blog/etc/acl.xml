@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Dung_Blog::Blog" title="Blog Manager" sortOrder="1">
+                    <resource id="Dung_Blog::Blog_save" title="Save Blog" sortOrder="10"/>
+                    <resource id="Dung_Blog::Blog_delete" title="Delete Blog" sortOrder="20"/>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

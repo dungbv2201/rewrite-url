@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="dung_blog_save_url_rewrite">
+        <observer name="data_config_url_rewrite" instance="Dung\Blog\Observer\BlogUrlRewrite" />
+    </event>
+</config>

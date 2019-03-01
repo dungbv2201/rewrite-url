@@ -1,0 +1,44 @@
+<style>
+    .card {
+        border: 1px #ccc solid;
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+
+    .content {
+        padding: 0 15px 15px 15px;
+    }
+
+    .btn-success {
+        background: #2ca02c;
+        height: 30px;
+        border-radius: 4px;
+        border: none;
+    }
+</style>
+<?php
+$blogs = $block->getBlog();
+?>
+<?php if (count($blogs) > 0): ?>
+    <?php foreach ($blogs as $blog): ?>
+        <div class="card">
+            <img src="<?php echo $block->getUrlImage() . $blog['image'] ?>"
+                 alt="<?php echo $block->getUrlImage() . $blog['image'] ?>"/>
+            <div class="content">
+                <h3>
+                    <?php echo $blog['title'] ?>
+                </h3>
+                <p>
+                    <?php echo $blog['description'] ?>
+                </p>
+                <button class="btn-success">
+                    <a href="<?php echo $block->getUrl() . 'blog/' . $blog['slug'] . '-' . $blog['id'] . '.html'; ?>">Read
+                        more</a>
+                </button>
+            </div>
+        </div>
+    <?php endforeach ?>
+    <?php echo $this->getPager() ?>
+<?php else: ?>
+    <h3>Dữ liệu đang đc cập nhât...</h3>
+<?php endif ?>

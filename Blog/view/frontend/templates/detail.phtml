@@ -1,0 +1,24 @@
+<style>
+
+    .content{
+        padding: 0 15px 15px 15px;
+    }
+</style>
+<?php $blog = $block->getBlog();
+    $idStoreCurrent = $block->getStoreIdCurrent();
+?>
+<?php if($blog['store_id'] == $idStoreCurrent ):?>
+<div class="container">
+    <h2>
+        <?php echo $blog['title']?>
+    </h2>
+    <img src="<?php echo $block->getUrlImage().$blog['image']?>"
+         alt="<?php echo $block->getUrlImage().$blog['image']?>"/>
+    <div class="content">
+        <?php echo $blog['content']?>
+    </div>
+</div>
+
+<?php else: ?>
+    Dữ liệu đang cập nhật...
+<?php endif ?>
